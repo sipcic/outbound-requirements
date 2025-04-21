@@ -1,4 +1,4 @@
-# XML to CSV Transformer via JMS Queue
+# Requirements: Batching JMS Messages to Files
 
 ## Overview
 This document outlines the design requirements and flow for an XML-to-CSV Transformer system. The system consumes XML messages from a JMS queue, transforms them based on a descriptor, and writes them to a CSV file in a reliable, fault-tolerant, and transactional manner.
@@ -102,8 +102,6 @@ graph TD
         O --> C
     end
 ```
-
-![Process Flow](process.png)
 ---
 
 ## External Configuration - descriptor.json
