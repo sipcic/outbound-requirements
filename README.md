@@ -1,5 +1,20 @@
 # Requirements: Batching JMS Messages to Files
 
+## 🧭 Project Navigation Legend
+
+This table provides a quick reference across all repositories in the outbound messaging solution. Use it to understand each component’s role and navigate between them easily.
+
+| Repository            | Description                                  | Status             |
+|-----------------------|----------------------------------------------|--------------------|
+| [outbound-adapter](https://github.com/sipcic/outbound-adapter)           | Main entry point that orchestrates all outbound flow. | 🟢 Start Here  |
+| [outbound-requirements](https://github.com/sipcic/outbound-requirements) | Functional and technical requirements documentation. | 🟢 **You are here**         |
+| [outbound-scheduler](https://github.com/sipcic/outbound-scheduler)       | Publishes EOF signals to trigger batch finalization. | ⏰ Scheduler         |
+| [outbound-processor](https://github.com/sipcic/outbound-processor)       | Transforms and writes JMS messages to files.         | 🛠️ Processor  |
+
+> 🔗 **Tip**: Use this table from any repo to find your way back to the main flow or explore related modules.
+
+---
+
 ## Overview
 This document outlines the design requirements and flow for an XML-to-CSV Transformer system. The system consumes XML messages from a JMS queue, transforms them based on a descriptor, and writes them to a CSV file in a reliable, fault-tolerant, and transactional manner.
 
@@ -8,6 +23,7 @@ This document outlines the design requirements and flow for an XML-to-CSV Transf
 ## Requirements
 
 ### 1. Message Production
+
 - A producer continuously writes XML messages to a JMS queue.
 
 ### 2. Message Processing
@@ -134,5 +150,4 @@ This system ensures:
 
 ---
 
-*End of Document*
 
